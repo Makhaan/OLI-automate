@@ -5,7 +5,7 @@ describe('page display on medium size screen',
             }, () => {
 
                 beforeEach(() => {
-                    cy.intercept('GET', '**/some-endpoint').as('someAlias'); // Adjust this as needed
+                    cy.intercept('GET', '**/some-endpoint').as('someAlias');
                   });
 
     it('Homepage', () => {
@@ -50,7 +50,7 @@ describe('page display on medium size screen',
     })
     it('Weekender page', () => {
         cy.visit("https://www.outlookindia.com/weekender")
-        cy.wait(2000)
+        cy.contains('Hello, World')
         cy.get('#section0 > .fp-tableCell > a > .card_layout > .__right').click()
         cy.go('back')
         cy.get('.btn-down > a > img').click()
@@ -125,20 +125,27 @@ describe('page display on medium size screen',
     })
 
     it('Travel page' , () => {
-       cy.visit("https://www.outlookindia.com/traveller")
-       cy.wait(1000)
-
+        cy.visit("https://www.outlookindia.com/traveller")
+        cy.contains('Traveller')
+        cy.get(':nth-child(5) > .article-hero-list > .category-main > :nth-child(1) > .articles > .row > .col-4 > .article-img-box > a > .article-img').click()
+        cy.contains('Click here to read the full article')
+        cy.go('back')
+ 
+        cy.get(':nth-child(1) > .article-hero-list > :nth-child(1) > .articles > .row > .order-1 > .article-img-box > a > .article-img').click()
+        cy.contains('Click here to read the full article')
+        
+ 
        cy.visit("https://www.outlookindia.com/traveller/experiences")
-       cy.wait(1000)
-
-       cy.visit("https://www.outlookindia.com/traveller/stay")
-       cy.wait(1000)
-
-       cy.visit("https://www.outlookindia.com/traveller/whats-new")
-       cy.wait(1000)
-
-       cy.visit("https://www.outlookindia.com/traveller/editors-picks")
-       cy.wait(2000)
+       cy.contains('Experiences')
+ 
+        cy.visit("https://www.outlookindia.com/traveller/stay")
+        cy.contains('Stay')
+ 
+        cy.visit("https://www.outlookindia.com/traveller/whats-new")
+        cy.contains('load more stories')
+ 
+        cy.visit("https://www.outlookindia.com/traveller/editors-picks")
+        cy.contains('load more stories')
 
     })
 

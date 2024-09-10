@@ -5,19 +5,26 @@
      }, () => {
     it('Storypage', () => {
         cy.visit("https://www.outlookindia.com/traveller")
-       cy.wait(1000)
+       cy.contains('Traveller')
+       cy.get(':nth-child(5) > .article-hero-list > .category-main > :nth-child(1) > .articles > .row > .col-4 > .article-img-box > a > .article-img').click()
+       cy.contains('Click here to read the full article')
+       cy.go('back')
 
-       cy.visit("https://www.outlookindia.com/traveller/experiences")
-       cy.wait(1000)
+       cy.get(':nth-child(1) > .article-hero-list > :nth-child(1) > .articles > .row > .order-1 > .article-img-box > a > .article-img').click()
+       cy.contains('Click here to read the full article')
+       
+
+      cy.visit("https://www.outlookindia.com/traveller/experiences")
+      cy.contains('Experiences')
 
        cy.visit("https://www.outlookindia.com/traveller/stay")
-       cy.wait(1000)
+       cy.contains('Stay')
 
        cy.visit("https://www.outlookindia.com/traveller/whats-new")
-       cy.wait(1000)
+       cy.contains('load more stories')
 
        cy.visit("https://www.outlookindia.com/traveller/editors-picks")
-       cy.wait(1000)
+       cy.contains('load more stories')
 
     
 })
