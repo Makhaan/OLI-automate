@@ -138,7 +138,7 @@ describe('page display on medium size screen',
        cy.wait(1000)
 
        cy.visit("https://www.outlookindia.com/traveller/editors-picks")
-       cy.wait(1000)
+       cy.wait(2000)
 
     })
 
