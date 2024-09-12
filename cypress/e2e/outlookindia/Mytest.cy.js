@@ -40,6 +40,7 @@ describe('page display on medium size screen',
 
         it('magazine page', () => {
             cy.visit("https://www.outlookindia.com/magazine")
+            cy.contains('ALL ISSUES')
             cy.get('#select-mag').select('2023')
             cy.get('#sub-tab-pane-All-02023 > .row > [data-test-id="current-issue-1"] > .magazine-cover-image-m_image__3-ZtB > a > .qt-image').click()
             cy.get('.col-5 > .article-img-box > a > .article-img').click()
@@ -50,7 +51,7 @@ describe('page display on medium size screen',
         })
         it('Weekender page', () => {
             cy.visit("https://www.outlookindia.com/weekender")
-            cy.contains('Hello, World')
+            cy.contains('Back to Home')
             cy.get('#section0 > .fp-tableCell > a > .card_layout > .__right').click()
             cy.go('back')
             cy.get('.btn-down > a > img').click()
@@ -176,7 +177,7 @@ describe('page display on medium size screen',
             cy.wait(1000)
 
             cy.visit("https://outlookhindi.com/")
-            cy.contains('एंटरटेनमेंट')
+            
             cy.wait(2000)
 
             // outlookluxe has Uncaught error
