@@ -1,8 +1,8 @@
 
     describe('page display on medium size screen',
        {
-        viewportHeight: 1000,
-        viewportWidth: 1650,
+        viewportHeight: 1200,
+        viewportWidth: 1850,
      }, () => {
         
     it('Storypage', () => {
@@ -16,8 +16,8 @@
         cy.go('back')
       })
 
-       
-        
+    
+      
 })
 Cypress.on('uncaught:exception', (err, runnable) => {
     return false
