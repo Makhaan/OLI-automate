@@ -79,22 +79,18 @@ describe('Outlooktraveller',
     cy.contains('Shopping')
     cy.wait(3000)
 
-    
     cy.visit("https://www.outlooktraveller.com/experiences/spiritual")
     cy.contains('Spiritual')
     cy.wait(3000)
-
-    
+      
     cy.visit("https://www.outlooktraveller.com/experiences/places-of-interest")
     cy.contains('Places of Interest')
     cy.wait(3000)
 
-    
     cy.visit("https://www.outlooktraveller.com/experiences/nature")
     cy.contains('Nature')
     cy.wait(3000)
 
-    
     cy.visit("https://www.outlooktraveller.com/stay/luxury")
     cy.contains('Luxury')
     cy.wait(3000)

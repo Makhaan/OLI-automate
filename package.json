@@ -1,8 +1,27 @@
 {
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "nodemailer": "^6.9.16"
   },
   "devDependencies": {
     "cypress": "^13.14.2"
-  }
+  },
+  "name": "cypress",
+  "version": "1.0.0",
+  "main": "cypress.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Makhaan/outlookindia.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Makhaan/outlookindia/issues"
+  },
+  "homepage": "https://github.com/Makhaan/outlookindia#readme",
+  "description": ""
 }

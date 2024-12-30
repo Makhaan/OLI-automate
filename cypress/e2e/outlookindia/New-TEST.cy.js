@@ -24,11 +24,20 @@ describe('New Test',
             cy.get('.lms-btn').click()
             cy.wait(2000)
 
+            //delete
+            cy.wait(5000)
+            cy.go('back')
+            cy.get('.lms-btn').click()
+            cy.get('#searchButtonNav').click()
+            cy.get('#searchInputNav').type('harbor Law').click()
+            cy.get('#searchToggle').click()
+            //search page
+
             //National Page
             cy.get('.rm-menu-list-block > :nth-child(3) > .d-flex > .rm-category').click()
             cy.get('.rm-container > .slider-one1 > .slick-next').click()
             cy.get('.rm-container > .slider-one1 > .slick-prev').click()
-            cy.get('#load-more-button-category').click()
+            cy.get('#load-more-button-category') .click()
 
             //International page
             cy.get('.rm-menu-list-block > :nth-child(4)').click()
