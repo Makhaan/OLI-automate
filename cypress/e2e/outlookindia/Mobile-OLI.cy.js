@@ -30,8 +30,8 @@ describe('Test',
         cy.contains('Updated on:')
         cy.wait(3000)
         cy.go('back')
-        // National
 
+        // National
         cy.get(':nth-child(5) > .row.justify-content-center > .col-lg-9 > .category-head > .more > a').click()
         cy.contains('National')
         cy.wait(3000)
