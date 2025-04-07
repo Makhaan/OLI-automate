@@ -32,7 +32,7 @@ describe('Sanity Test',
             cy.go('back')
             cy.wait(2000)
             cy.get(':nth-child(1) > .article-img-box > a > .article-img').click()
-            cy.get('#pushengage-opt-in-1-close').click()  //push noti
+           // cy.get('#pushengage-opt-in-1-close').click()  //push noti
             cy.go('back')
             cy.wait(3000)
             cy.get('.mt-md-5 > .col-md-12 > .article-hero-list > :nth-child(1) > .articles > .row > .col-8 > .article-heading-two > a').click()
