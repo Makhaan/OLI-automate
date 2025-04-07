@@ -177,7 +177,7 @@ describe('Meet_Memo.ai',
         cy.url().should('include', '/dashboard');
       });
 
-      it('verify and save profile', () => {
+      it('verify Edit and save profile', () => {
         cy.url().should('include', '/dashboard');
 
         cy.get('.rounded-md > .relative > .flex').click()
@@ -262,6 +262,39 @@ describe('Meet_Memo.ai',
 
       })
     })
+
+    describe('Verify Space page', () => {
+      const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyNywibmFtZSI6Im1hYWtoYW4uZW5wb2ludGUiLCJwcm9maWxlX3BpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NKMzlWb3RCdjlwWGlGOFg2VE5ydnNvaG5xRHNpbUJacTZFc3phaVoxRzMySDVUaXc9czk2LWMiLCJvcmdhbml6YXRpb25faWQiOiIzZDM3OWJkOC0wYmVkLTQ1MzQtOWIzYS04MzIxNzEwNWZhZDEiLCJpYXQiOjE3NDM4NDYxNzYsImV4cCI6MTc0NjQzODE3Nn0.-YtEklseMje-fHzVSLsD62Ecym8PWEx3zOX4vpX6V4g";
+
+      beforeEach(() => {
+        cy.visit(`https://app.meetmemo.ai/verify_token?token=${token}`);
+        cy.contains("Maakhan.enpointe");
+        cy.url().should('include', '/dashboard');
+      });
+      it('Edit Space', () => {
+        cy.visit("https://app.meetmemo.ai/spaces");
+        cy.url().should('include', '/spaces');
+
+        cy.get('.lucide.lucide-pencil.h-4.w-4').click()
+        cy.get('input[value="Test Card"]').click().clear().type('Demo card')
+        cy.get('button:nth-child(4)').click()
+        cy.get('textarea[name=space_description]').click().type('MeetMemo is wonderful')
+        cy.get('button[type=submit]').click()
+  
+        cy.get('.lucide.lucide-pencil.h-4.w-4').click()
+        cy.get('input[value="Demo card"]').click().clear().type('Test Card')
+        cy.get('div[class="grid grid-cols-5 gap-4 p-10 rounded-md"] button:nth-child(1)').click()
+        cy.get('textarea[name=space_description]').click().clear()
+        cy.get('button[type=submit]').click()
+
+      })
+
+      it('Add and delete Space', () => {
+        cy.visit("https://app.meetmemo.ai/spaces");
+        cy.url().should('include', '/spaces');
+
+    })
+  })
 
     Cypress.on('uncaught:exception', (err, runnable) => {
       return false
